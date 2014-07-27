@@ -27,10 +27,10 @@ end
 
 p1 = Project.new("crohn's research lab",10000,1000000)
 p2 = Project.new("ultralight mudguards",1000,5000)
+projects = [p1, p2]
 
-puts p1
-puts p2
-puts p1.remove_funds
-puts p2.add_funds
-puts p1
-puts p2
+puts "There are #{projects.size} projects that need funding:"
+
+projects.each do |p|
+  puts p
+end
