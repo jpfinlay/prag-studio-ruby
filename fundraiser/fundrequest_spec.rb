@@ -1,5 +1,4 @@
 require_relative 'fundrequest'
-require_relative 'die'
 
 describe "FundRequest" do
   
