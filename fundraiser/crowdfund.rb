@@ -8,4 +8,4 @@ vcfriendly = FundRequest.new("Medical Projects")
 vcfriendly.add_project(p1)
 vcfriendly.add_project(p2)
 vcfriendly.add_project(p3)
-vcfriendly.request_funding
+vcfriendly.request_funding(3)

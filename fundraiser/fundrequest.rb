@@ -10,22 +10,18 @@ class FundRequest
     @projects << project
   end
 
-  def request_funding
+  def request_funding(rounds)
     puts "There are #{@projects.size} projects that need funding:"
     @projects.each do |project|
       puts project
     end
 
-    @projects.each do |project|
-      
-      FundingRound.round(project)
-
-      #die = Die.new
-      #number_rolled = die.roll
-      #
-      #number_rolled.even? ? project.add_funds : project.remove_funds 
-      
-      puts project
+    1.upto(rounds) do |round| 
+      puts "Funding round #{round} out of #{rounds}:"
+      @projects.each do |project|
+        FundingRound.one_round(project)
+        puts project
+      end
     end
   end
 end
