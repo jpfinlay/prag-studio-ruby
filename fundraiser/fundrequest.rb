@@ -35,5 +35,9 @@ class FundRequest
     unfunded.each do |project|
       puts "\t#{project.name} (#{project.funding})"
     end
+    puts "\nProjects still requiring funding contributions (sorted by amount outstanding)"
+    unfunded.sort.each do |project|
+      puts "\t#{project.name} (#{project.funding_outstanding})"
+    end
   end
 end

@@ -26,6 +26,10 @@ class Project
     funding_outstanding <= 0
   end
 
+  def <=>(other)
+    other.funding_outstanding <=> funding_outstanding
+  end
+
   def to_s
     "Project #{@name} has $#{@funding} in funding towards a goal of $#{@target}.\nFunding required: #{funding_outstanding}."
   end
