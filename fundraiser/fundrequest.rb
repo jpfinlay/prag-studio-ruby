@@ -24,4 +24,16 @@ class FundRequest
       end
     end
   end
+
+  def print_stats
+    funded, unfunded = @projects.partition { |project| project.fully_funded? }
+    puts "\nThere are #{funded.size} fully funded projects in the category #{@name}:"
+    funded.each do |project|
+      puts "\t#{project.name} (#{project.funding})"
+    end
+    puts "There are #{unfunded.size} unfunded projects in the category #{@name}:"
+    unfunded.each do |project|
+      puts "\t#{project.name} (#{project.funding})"
+    end
+  end
 end
