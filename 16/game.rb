@@ -1,6 +1,5 @@
 require_relative 'player'
 require_relative 'game_turn'
-require_relative 'treasure_trove'
 
 class Game
   attr_reader :title

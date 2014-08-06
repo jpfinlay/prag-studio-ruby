@@ -14,18 +14,18 @@ describe "FundRequest" do
   end
 
   it "adds funds if an even number is rolled" do
-    allow_any_instance_of(Die).to receive(:roll).and_return(2) 
+    allow_any_instance_of(Die).to receive(:roll).and_return(4) 
 
-    @fundrequest.request_funding
+    @fundrequest.request_funding(2)
 
-    expect(@project.funding).to eq(@funding + 25)
+    expect(@project.funding).to eq(@funding + (2 * 25))
   end
 
   it "removes funds if an odd number is rolled" do
     allow_any_instance_of(Die).to receive(:roll).and_return(3) 
 
-    @fundrequest.request_funding
+    @fundrequest.request_funding(2)
 
-    expect(@project.funding).to eq(@funding - 15)
+    expect(@project.funding).to eq(@funding - (2 * 15))
   end
 end

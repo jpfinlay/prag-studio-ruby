@@ -1,4 +1,5 @@
 require_relative 'game'
+require_relative 'treasure_trove'
 
 module GameTurn
   def self.roll_die
